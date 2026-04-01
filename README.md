@@ -3,9 +3,8 @@
 **A continuous-time, asynchronous perception engine for high-frequency Limit Order Book (LOB) data, combining Mamba-3 with a Hawkes exponential decay filter.**
 
 ## The Problem: The Order Book is Not a Metronome
-For the last five years, the quantitative finance community has been trying to forcefully shove high-frequency Level 3 Market-By-Order (MBO) data into Transformer architectures. 
 
-But Transformers are structurally blind to the realities of microstructure. They treat sequential events like a cancelled order, a microsecond pause, an aggressive sweep — as equally spaced tokens. When you use positional encoding to analyze a market that operates in continuous time, you are actively destroying your own alpha. Furthermore, standard Transformers scale quadratically ($O(L^2)$), making microsecond-level sequence lengths computationally unviable.
+Transformers are structurally blind to the realities of market microstructure. They treat sequential events like a cancelled order, a microsecond pause, an aggressive sweep — as equally spaced tokens. When you use positional encoding to analyze a market that operates in continuous time, you are actively destroying your own alpha. Furthermore, standard Transformers scale quadratically ($O(L^2)$), making microsecond-level sequence lengths computationally unviable.
 
 ## The Solution: Mamba + Hawkes
 We needed a perception engine that understood the physics of order flow contagion and could scale linearly ($O(L)$). 
