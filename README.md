@@ -25,7 +25,7 @@ The architecture is built natively in PyTorch and falls back to a pure PyTorch M
 
 ```python
 import torch
-from lob_mamba import LOBMambaV3
+from lob_mamba_v3 import LOBMambaV3
 
 # Define dimensions
 batch_size = 32
@@ -49,10 +49,9 @@ perception_engine = LOBMambaV3(
 # Extract the continuous-time state vector
 state = perception_engine(x, dt)
 # Output shape: [32, 64] -> Ready for your RL Agent or Classifier
+```
 
-
-
-Requirements
+## Requirements
 torch >= 2.0.0
 
 mamba-ssm (Optional, highly recommended for CUDA acceleration)
